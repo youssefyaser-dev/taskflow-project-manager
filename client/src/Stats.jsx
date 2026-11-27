@@ -15,8 +15,8 @@ export default function Stats({ projectId, refreshKey }) {
     <section className="stats">
       <div className="card stat">
         <svg width="72" height="72" viewBox="0 0 72 72" role="img" aria-label={`${s.completionRate}%`}>
-          <circle cx="36" cy="36" r={R} fill="none" stroke="#e5e7eb" strokeWidth="8" />
-          <circle cx="36" cy="36" r={R} fill="none" stroke="#4f46e5" strokeWidth="8" strokeLinecap="round"
+          <circle cx="36" cy="36" r={R} fill="none" stroke="#e8ddd2" strokeWidth="8" />
+          <circle cx="36" cy="36" r={R} fill="none" stroke="#f4511e" strokeWidth="8" strokeLinecap="round"
             strokeDasharray={`${(s.completionRate / 100) * C} ${C}`} transform="rotate(-90 36 36)" />
           <text x="36" y="41" textAnchor="middle" fontSize="15" fontWeight="700" fill="#111827">{s.completionRate}%</text>
         </svg>

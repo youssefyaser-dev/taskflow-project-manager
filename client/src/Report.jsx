@@ -10,10 +10,10 @@ function Burndown({ data }) {
   const pts = data.map((d, i) => `${x(i)},${y(d.remaining)}`).join(' ');
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="chart" role="img">
-      {[0, 0.5, 1].map((g) => <g key={g}><line x1={P} x2={W - P} y1={y(max * g)} y2={y(max * g)} stroke="#e5e7eb" /><text x={4} y={y(max * g) + 4} fontSize="11" fill="#6b7280">{Math.round(max * g)}</text></g>)}
-      <polygon points={`${P},${H - P} ${pts} ${W - P},${H - P}`} fill="#4f46e522" />
-      <polyline points={pts} fill="none" stroke="#4f46e5" strokeWidth="2.5" />
-      {data.map((d, i) => <circle key={d.date} cx={x(i)} cy={y(d.remaining)} r="3" fill="#4f46e5"><title>{d.date}: {d.remaining}</title></circle>)}
+      {[0, 0.5, 1].map((g) => <g key={g}><line x1={P} x2={W - P} y1={y(max * g)} y2={y(max * g)} stroke="#e8ddd2" /><text x={4} y={y(max * g) + 4} fontSize="11" fill="#6b7280">{Math.round(max * g)}</text></g>)}
+      <polygon points={`${P},${H - P} ${pts} ${W - P},${H - P}`} fill="#f4511e22" />
+      <polyline points={pts} fill="none" stroke="#f4511e" strokeWidth="2.5" />
+      {data.map((d, i) => <circle key={d.date} cx={x(i)} cy={y(d.remaining)} r="3" fill="#f4511e"><title>{d.date}: {d.remaining}</title></circle>)}
       <text x={P} y={H - 8} fontSize="11" fill="#6b7280">{data[0]?.date}</text>
       <text x={W - P} y={H - 8} fontSize="11" fill="#6b7280" textAnchor="end">{data.at(-1)?.date}</text>
     </svg>
@@ -43,7 +43,7 @@ export default function Report({ project, refreshKey }) {
       <section className="card pad"><h3>{t('timeByPerson')}</h3>
         {r.time.length === 0 && <p className="empty">{t('nothing')}</p>}
         {r.time.map((x) => (
-          <div className="bar wide-bar" key={x.name}><span>{x.name}</span><div className="track"><div style={{ width: `${(x.minutes / maxT) * 100}%`, background: '#4f46e5' }} /></div><b>{hm(x.minutes)}</b></div>
+          <div className="bar wide-bar" key={x.name}><span>{x.name}</span><div className="track"><div style={{ width: `${(x.minutes / maxT) * 100}%`, background: '#f4511e' }} /></div><b>{hm(x.minutes)}</b></div>
         ))}
       </section>
     </div>

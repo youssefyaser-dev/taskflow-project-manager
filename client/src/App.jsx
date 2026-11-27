@@ -39,7 +39,7 @@ function AuthForm({ t, onDone }) {
       <button type="button" className="link" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>
         {mode === 'login' ? t('noAccount') : t('haveAccount')}
       </button>
-      <button type="button" className="link" onClick={() => submit(null, { email: 'demo@taskflow.test', password: 'demo12345' })}>{t('demo')}</button>
+      <button type="button" className="link" onClick={() => submit(null, { email: 'karim@northwind.test', password: 'welcome123' })}>{t('demo')}</button>
     </form>
   );
 }
