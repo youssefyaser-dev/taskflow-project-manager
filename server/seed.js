@@ -1,11 +1,11 @@
 import { hashPassword } from './auth.js';
 
-// Fills an empty database with a demo team, projects and tasks.
+// Fills an empty database with a sample team, projects and tasks.
 export function seed(db) {
   if (db.prepare('SELECT COUNT(*) AS n FROM users').get().n > 0) return;
   const run = (sql, ...a) => Number(db.prepare(sql).run(...a).lastInsertRowid);
-  const user = (name, email) => run('INSERT INTO users (name, email, password_hash) VALUES (?,?,?)', name, email, hashPassword('demo12345'));
-  const demo = user('Demo User', 'demo@taskflow.test');
+  const user = (name, email) => run('INSERT INTO users (name, email, password_hash) VALUES (?,?,?)', name, email, hashPassword('welcome123'));
+  const demo = user('Karim Adel', 'karim@northwind.test');
   const sara = user('Sara Lee', 'sara@taskflow.test');
   const omar = user('Omar Hassan', 'omar@taskflow.test');
   const ws = run('INSERT INTO workspaces (name, owner_id) VALUES (?, ?)', 'Northwind Studio', demo);
