@@ -2,6 +2,7 @@
 
 ![Board](docs/screenshots/board.png)
 ![Reports](docs/screenshots/report.png)
+![Task details](docs/screenshots/task.png)
 
 A team project board. Express and SQLite on the server, React on the client. Workspaces with roles, kanban boards with drag and drop, assignees, labels, subtasks, time tracking, comments with @mentions, notifications, an activity feed, reports with a burndown chart, CSV export, and an English/Arabic interface with full right-to-left layout.
 
@@ -23,7 +24,7 @@ Needs Node 22 or newer.
 ```bash
 npm install
 npm run build
-SEED_DEMO=1 npm start     # http://localhost:3000, demo login: demo@taskflow.test / demo12345
+SEED_DEMO=1 npm start     # http://localhost:3000, sample login: karim@northwind.test / welcome123
 ```
 
 Development with hot reload: `npm run dev:server` and in another terminal `npm run dev:client`.
